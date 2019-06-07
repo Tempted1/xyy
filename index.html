@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            background-color: yellow;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .clearFix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .left-nav {
+            position: absolute;
+            /*使左边固定，腾出右边区域给主体卡片 */
+            background-color: rgb(148, 69, 212);
+            height: 100%;
+            width: 300px;
+        }
+
+        .left-nav .head {
+            border-bottom: 1px solid white;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            /* 用padding,而不是用margin*/
+
+        }
+
+        .left-nav .head .head-icon {
+            float: left;
+            height: 40px;
+            width: 30px;
+            background: url(images/finance.png) no-repeat center;
+            background-size: contain;
+            /* border:1px solid red; */
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .left-nav .head .head-word {
+            /* border:1px solid black; */
+            float: left;
+            height: 40px;
+            padding-left: 50px;
+            line-height: 40px;
+            /*使字居中 */
+        }
+
+        .left-nav ul {
+            margin-top: 50px;
+        }
+
+        .left-nav ul li {
+            position: relative;
+            /* border:1px solid blue; */
+            padding-left: 100px;
+
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+            cursor: pointer;
+        }
+
+        .left-nav ul .current {
+            background-color: rgb(168, 101, 177);
+        }
+
+        .left-nav ul li span {
+            position: absolute;
+            padding-left: 75px;
+            left: 0;
+            top: 0;
+
+            width: 20px;
+            height: 30px;
+
+            top: 50%;
+            margin-top: -15px;
+
+            /* border:1px solid black; */
+        }
+
+        .left-nav .first {
+            background: url(images/service.png) no-repeat center;
+            background-size: contain;
+        }
+
+        .left-nav .second {
+            background: url(images/balance.png) no-repeat center;
+            background-size: contain;
+        }
+
+        .left-nav .third {
+            background: url(images/pay.png) no-repeat center;
+            background-size: contain;
+        }
+
+        .left-nav .forth {
+            background: url(images/accounting.png) no-repeat center;
+            background-size: contain;
+        }
+
+        .left-nav .fifth {
+            background: url(images/filtering.png) no-repeat center;
+            background-size: contain;
+        }
+
+
+        .right {
+            /* 为了使左边导航栏露出来 */
+            margin-left: 300px;
+
+            position: relative;
+            background-image: linear-gradient(135deg, rgb(77, 41, 175), rgb(206, 52, 226));
+            height: 100%;
+        }
+
+        .right-card {
+            position: absolute;
+
+            /* 将卡片调到正中间 */
+            top: 50%;
+            left: 50%;
+            margin-top: -250px;
+            margin-left: -400px;
+
+            width: 760px;
+            height: 480px;
+            background-color: rgb(59, 10, 105);
+
+            padding: 20px 10px;
+        }
+
+        .right .right-card ul {
+            height: 100%;
+
+            /* 将溢出的隐藏 */
+            /* overflow:hidden; */
+        }
+
+        .right .right-card ul li {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(205, 162, 236);
+        }
+
+        .right .right-card ul .show {
+            display: block;
+        }
+
+        .right .right-card .title-card {
+            position: absolute;
+            top: -28px;
+            width: 85px;
+            height: 45px;
+            background-color: rgb(89, 102, 224);
+            border-radius: 5px;
+        }
+
+        .right .right-card .title-card .title {
+            position: absolute;
+            /* border:1px solid red; */
+            width: 70px;
+            height: 30px;
+            top: 50%;
+            left: 50%;
+            margin-top: -15px;
+            margin-left: -35px;
+            line-height: 30px;
+        }
+
+        .right .right-card .two input {
+            /* display:block; */
+            width: 350px;
+            border-radius: 6px;
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left-nav">
+        <div class="head clearFix">
+            <div class="head-icon"></div>
+            <div class="head-word">挖财</div>
+        </div>
+        <div class="list">
+            <ul id="navList">
+                <li class="current" id="">
+                    <span class="first"></span>
+                    理财服务
+                </li>
+                <li>
+                    <span class="second">
+
+                    </span>
+                    余额计算
+                </li>
+                <li>
+                    <span class="third">
+                    </span>
+                    支付方式
+                </li>
+                <li>
+                    <span class="forth">
+
+                    </span>
+                    记账
+                </li>
+                <li>
+                    <span class="fifth">
+
+                    </span>
+                    筛选账单
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="right">
+        <div class="right-card">
+
+            <ul id="boxList">
+                <li class="one show">
+                    <div class="title-card">
+                        <div class="title">
+                            理财服务
+                        </div>
+                    </div>
+                </li>
+
+                <li class="two">
+                    <div class="title-card">
+                        <div class="title">
+                            余额计算
+                        </div>
+                    </div>
+                    <input type="text" placeholder="基础现金">
+                    <input type="text" placeholder="收入">
+                    <input type="text" placeholder="房租">
+                    <input type="text" placeholder="水电">
+                    <input type="text" placeholder="吃饭">
+                    <input type="text" placeholder="请吃饭">
+                    <input type="text" placeholder="ktv">
+                    <div>
+                        <button type="submit">余额计算</button>
+                        <input type="text" placeholder="余额" class="sum">
+                    </div>
+                </li>
+
+                <li class="three">
+                    <div class="title-card">
+                        <div class="title">
+                            支付方式
+                        </div>
+                    </div>
+                    <select>
+                        <option>支付宝</option>
+                        <option>微信</option>
+                        <option>银行卡</option>
+                    </select>
+                </li>
+
+                <li class="four">
+                    <div class="title-card">
+                        <div class="title">
+                            记账
+                        </div>
+                    </div>
+                </li>
+
+                <li class="five">
+                    <div class="title-card">
+                        <div class="title">
+                            筛选账单
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="js/index.js"></script>
+    

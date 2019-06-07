@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       .former{
+           width:500px;
+           border:1px solid black;
+           margin:50px auto;
+           background-color:black;
+           border-radius: 15px;
+       }
+       .inner{
+           position: relative;
+           width:480px;
+           margin:0 auto;
+           margin-bottom:20px;
+           height:40px;
+           background:#FFFFFF;
+           border:1px solid #DFE2E6;
+           box-shadow: 0 0 3px 0 rgba(0,0,0,0.05);
+           border-radius: 20px;
+       }
+       .inner input{
+           width:220px;
+           height:38px;
+           line-height:40px;
+           margin-left:40px;
+           outline: 0;
+           border:none;
+           font-size:13px;
+           font-weight:lighter;
+           color:rgb(59,61,63);
+           text-align: left;
+        }
+        .icon{
+            position: absolute;
+            top:12px;
+            left:12px;
+            width:20px;
+            height:16px;
+        }
+        .icon-phone{
+            background:url(../images/account.png) no-repeat center;
+            background-size: contain;
+        }
+        .icon-password{
+            background:url(../images/password.png) no-repeat center;
+            background-size:contain;
+        }
+        .submit{
+           position: relative;
+           width:350px;
+           margin:20px auto;
+           height:40px;
+           background:rgb(56, 13, 13);
+           border:1px solid #DFE2E6;
+           box-shadow: 0 0 3px 0 rgba(0,0,0,0.05);
+           border-radius: 15px;
+
+        }
+        .submit button{
+            width:350px;
+            height:40px;
+            line-height: 40px;
+           
+            background-color:#003333;
+            font-size:17px;
+            font-weight: lighter;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="former">
+        <div class="inner"> 
+            <input type="text" placeholder="账号">
+            <span class="icon icon-phone"></span>
+        </div>
+
+        <div class="inner"> 
+                <input type="text" placeholder="密码">
+                <span class="icon icon-password"></span>
+        </div>
+
+        <div class="submit"> 
+                <button type="submit">登录</button>
+                
+        </div>
+
+    </div>
+</body>
+</html>
